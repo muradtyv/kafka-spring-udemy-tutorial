@@ -73,7 +73,7 @@ public class LibraryEventsProducer {
 
     private ProducerRecord<Integer, String> buildProducerRecord(Integer key, String value) {
 
-       List<Header> recordHeaders = List.of(new RecordHeader("event-soruce","scanner".getBytes()));
+       List<Header> recordHeaders = List.of(new RecordHeader("event-source","scanner".getBytes()));
         return new ProducerRecord<Integer, String>(topic, null, key, value, recordHeaders);
     }
 
