@@ -22,6 +22,9 @@ public class LibraryEventsService {
     public void processLibraryEvents(ConsumerRecord<Integer,String> consumerRecord) throws JsonProcessingException, IllegalAccessException {
        LibraryEvent libraryEvent=  objectMapper.readValue(consumerRecord.value(), LibraryEvent.class);
 
+        System.out.println("consumerRecord: " + consumerRecord);
+        System.out.println("libraryEvent: " + libraryEvent);
+
         log.info("libraryEvent : {} ", libraryEvent);
 
         save(libraryEvent);
